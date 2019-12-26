@@ -1,11 +1,12 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Produit from './produit';
 
 function App() {
   return (
     <div className="App">
-      
+      <h2>Produit Matriciel</h2>
+      <Produit/>
     </div>
   );
 }
