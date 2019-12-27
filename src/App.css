@@ -7,7 +7,7 @@
   pointer-events: none;
 }
 .input{
-  max-width: 4em;
+  max-width: 1em;
 }
 
 @media (prefers-reduced-motion: no-preference) {

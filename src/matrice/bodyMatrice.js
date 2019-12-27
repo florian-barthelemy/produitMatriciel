@@ -1,5 +1,5 @@
 import React from "react";
-
+import CelluleMatrice from './celluleMatrice';
 export default function BodyMatrice(props) {
   const onChangeCellule = e => {
    let indice= e.target.id.split(":")
@@ -11,18 +11,18 @@ export default function BodyMatrice(props) {
     return props.matrice && props.matrice.map((ligne, index) => {
       return (
         <tr key={"ligneIndex" + index}>
-          <th scope="col">{index}</th>
+          <th className="input" scope="col">{index}</th>
           {ligne.map((cellule, index2) => {
             return (
-              <td key={"celluleIndex" + index + index2}>
-                  
-                <input
-                  className="input text-center form-control"
+              <td className="input" key={"celluleIndex" + index + index2}>
+                  <CelluleMatrice onChange={onChangeCellule} index={index} index2={index2} defaultValue={cellule}/>
+                {/* <input
+                  className=" text-center form-control"
                   onChange={onChangeCellule}
                   type="number"
                   id={index+":"+index2}
                   defaultValue={cellule}
-            />
+            /> */}
               </td>
             );
           })}
