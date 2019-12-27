@@ -42,7 +42,7 @@ export default function Produit() {
         "le nombre de colonnes doit être supérieur ou égal à 1"
       );
     } else {
-      if (isNaN(colonne2 )|| (colonne2%1)!==0) {
+      if (isNaN(colonne2)|| (colonne2%1)!==0) {
         setErreurColonne2(true);
         setMsgErreurColonne2("le nombre de colonnes doit être un entier");
       } else {
