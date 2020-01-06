@@ -8,11 +8,12 @@ export default function CelluleMatrice(props){
             setErreurValue(true);
            }else{
                setErreurValue(false);
+               props.onChange(e)
            }
     }
     return(
         <>
-        <input onChange={onChange} defaultValue={props.defaultValue} type="number" className=" text-center form-control"/>
+        <input onChange={onChange} disabled={props.disabled} defaultValue={props.defaultValue} id={props.index+":"+props.index2} type="number" className=" text-center form-control"/>
         {erreurValue ?(<small className="text-danger">La valeur rentrée n'est pas un nombre </small>):(<></>)}
         </>
     )
