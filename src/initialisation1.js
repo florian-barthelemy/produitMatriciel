@@ -4,7 +4,6 @@ import * as Yup from "yup";
 import { Formik } from "formik";
 export default function Produit() {
   let [init, setInit] = useState(false);
-  let [init2, setInit2] = useState(false);
   let [colonne,setColonne]=useState(1);
   let [colonne2,setColonne2]=useState(1);
   let [ligne,setLigne]=useState(1);
@@ -31,7 +30,6 @@ export default function Produit() {
    setColonne(e.colonne);
    setColonne2(e.colonne2);
    setLigne(e.ligne);
-    setInit2(true);
     setInit(true);
   }
 
@@ -112,15 +110,13 @@ export default function Produit() {
             </Formik>
           }
         </div>
-      ) : init2 ? (
+      ) : (
         <Init2
         colonne={colonne}
         ligne={ligne}
         colonne2={colonne2}
         />
-      ) : (
-        <></>
-      )}
+      ) }
     </div>
   );
 }

@@ -2,9 +2,8 @@ import React from "react";
 import CelluleMatrice from './celluleMatrice';
 export default function BodyMatrice(props) {
  function onChangeCellule(e){
-   let indice= e.target.id.split(":")
-   props.matrice[indice[0]][indice[1]]=parseFloat(e.target.value);
-   props.calculer();
+   let indice= e.target.id.split(":");
+   props.setCellule(indice,e.target.value);
   };
   
   function body() {
@@ -15,7 +14,7 @@ export default function BodyMatrice(props) {
           {ligne.map((cellule, index2) => {
             return (
               <td className="input" key={"celluleIndex" + index + index2}>
-                  <CelluleMatrice  disabled ={props.disabled} onChange={onChangeCellule} index={index} index2={index2} defaultValue={cellule}/>
+                  <CelluleMatrice onChange={onChangeCellule} index={index} index2={index2} defaultValue={cellule}/>
               </td>
             );
           })}

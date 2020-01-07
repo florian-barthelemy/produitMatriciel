@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import Produit from './produit';
+import Init1 from './initialisation1';
 
 function App() {
   return (
     <div className="App">
       <h2>Produit Matriciel</h2>
-      <Produit/>
+      <Init1/>
     </div>
   );
 }

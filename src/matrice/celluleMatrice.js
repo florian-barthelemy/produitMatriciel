@@ -13,7 +13,7 @@ export default function CelluleMatrice(props){
     }
     return(
         <>
-        <input onChange={onChange} disabled={props.disabled} defaultValue={props.defaultValue} id={props.index+":"+props.index2} type="number" className=" text-center form-control"/>
+        <input onChange={onChange}  defaultValue={props.defaultValue} id={props.index+":"+props.index2} type="number" className=" text-center form-control"/>
         {erreurValue ?(<small className="text-danger">La valeur rentrée n'est pas un nombre </small>):(<></>)}
         </>
     )
