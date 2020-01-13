@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function HeaderMatrice1(props){
+export default function HeaderMatrice(props){
 
    function header(){
     return (props.matrice && props.matrice[0].map((value,index)=>{
@@ -10,4 +10,6 @@ export default function HeaderMatrice1(props){
     return(
         <tr><th>index</th>{header()}</tr>
     )
-}
+   }
+
+
