@@ -10,6 +10,7 @@ export default function BodyMatrice(props) {
           {ligne.map((cellule, index2) => {
             return (
               <td className="input" key={"celluleIndex" + index + index2}>
+                {/** it wll show every case of the matrix res */}
                   <CelluleMatrice  index={index} index2={index2} defaultValue={cellule}/>
               </td>
             );

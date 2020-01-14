@@ -1,42 +1,86 @@
-import React, { useState,useEffect} from "react";
+import React, { useState } from "react";
 import Matrice from "./matrice/matrice";
 import MatriceRes from "./matriceRes/matrice";
 export default function Initialisation2(props) {
-  let [matrice1,setMatrice1] = useState([]);
-  let [matrice2,setMatrice2] = useState([]);
-  let iterateur1= matrice1.values();
-  let iterateur2= matrice2.values();
-  
-  function init(){
-  if (iterateur1.next().value===undefined && iterateur2.next().value===undefined) {
-    for (let i = 0; i < props.ligne; i++) {
-   matrice1=[...matrice1,[]];
-      for (let j = 0; j < props.colonne; j++) {
-      matrice1=matrice1.map((item,index)=> index===i ?[...item,1]:item)
+  /** *
+   * 
+   * init matrice1 ,matrice2 to an empty array
+   * iterateur1 and interateur2 takes values of matrice1 and matrice2
+   */
+  let [matrice1, setMatrice1] = useState([]);
+  let [matrice2, setMatrice2] = useState([]);
+  let iterateur1 = matrice1.values();
+  let iterateur2 = matrice2.values(); 
+
+  /**
+   * 
+   * this function will check if the first value of matrice1 and matrice2 are not undefined
+   * if they are so we init the two matrix 
+   */
+  function init() {
+    if (
+      iterateur1.next().value === undefined &&
+      iterateur2.next().value === undefined
+    ) {
+      for (let i = 0; i < props.ligne; i++) {
+        /** 
+         * push an empty array to matrice  i times
+         */
+        matrice1 = [...matrice1, []];
+        for (let j = 0; j < props.colonne; j++) {
+          /**
+           * 
+           * equals to matrice[i].push(1);
+           */
+          matrice1 = matrice1.map((item, index) =>
+            index === i ? [...item, 1] : item
+          );
+        }
+      }
+      for (let i = 0; i < props.colonne; i++) {
+        /**
+         * equals to matrice2.push([]);
+         */
+        matrice2 = [...matrice2, []];
+        for (let j = 0; j < props.colonne2; j++) {
+          /**
+           * 
+           * equals to  matrice2[i].push(1)
+           */
+          matrice2 = matrice2.map((item, index) =>
+            index === i ? [...item, 1] : item
+          );
+        }
       }
     }
-      for (let i = 0; i < props.colonne; i++) {
-        matrice2=[...matrice2,[]];
-           for (let j = 0; j < props.colonne2; j++) {
-           matrice2=matrice2.map((item,index)=> index===i ?[...item,1]:item)
-           }
-    }
   }
-}
 
-init();
-  function changeMatrice1(matrice){
-
-   setMatrice1(matrice);
-   setMatrice2(matrice2);
+  init();
+  /**
+   * 
+   * @param {*} matrice 
+   * this function change matrice1 with the matrice1 who were changed by user and 
+   * matrice2 will not changed
+   */
+  function changeMatrice1(matrice) {
+    setMatrice1(matrice);
+    setMatrice2(matrice2);
   }
-  function changeMatrice2(matrice){
-  setMatrice1(matrice1);
-  setMatrice2(matrice);
+
+    /**
+   * 
+   * @param {*} matrice 
+   * this function change matrice2 with the matrice2 who were changed by user and 
+   * matrice1 will not changed
+   */
+  function changeMatrice2(matrice) {
+    setMatrice1(matrice1);
+    setMatrice2(matrice);
   }
 
   return (
     <div className="row">
+      {/** it calls the three matrix */}
       <Matrice
         ligne={props.ligne}
         colonne={props.colonne}

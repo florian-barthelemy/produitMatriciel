@@ -3,19 +3,23 @@ import Init2 from "./initialisation2";
 import * as Yup from "yup";
 import { Formik } from "formik";
 export default function Produit() {
+  /**
+   * init colonne,colonne2,ligne to 1 and init to false
+   */
   let [init, setInit] = useState(false);
-  let [colonne,setColonne]=useState(1);
-  let [colonne2,setColonne2]=useState(1);
-  let [ligne,setLigne]=useState(1);
+  let [colonne, setColonne] = useState(1);
+  let [colonne2, setColonne2] = useState(1);
+  let [ligne, setLigne] = useState(1);
   let [defaultValue] = useState({ colonne: 1, ligne: 1, colonne2: 1 });
-
+/**
+ * formschema to control inputs
+ */
   let formSchema = Yup.object().shape({
     colonne: Yup.number()
-    .typeError("ce nombre doit être un nombre")
-    .required("le nombre de colonne de la première matrice requis")
+      .typeError("ce nombre doit être un nombre")
+      .required("le nombre de colonne de la première matrice requis")
       .integer("ce nombre doit être entier")
-      .min(1, "le nombre de colonnes  doit être supérieur à 1")
-      ,
+      .min(1, "le nombre de colonnes  doit être supérieur à 1"),
     ligne: Yup.number()
       .required("le nombre de ligne de la première matrice requis")
       .min(1, "le nombre de lignes doit être supérieur a 1")
@@ -25,17 +29,22 @@ export default function Produit() {
       .integer("ce nombre doit être entier")
       .min(1, "le nombre de colonnes  doit être supérieur à 1")
   });
-
+/**
+ * 
+ * @param {*} e 
+ * set the values to colonne,colonne2,ligne by form values and go to next stage
+ */
   function valider(e) {
-   setColonne(e.colonne);
-   setColonne2(e.colonne2);
-   setLigne(e.ligne);
+    setColonne(e.colonne);
+    setColonne2(e.colonne2);
+    setLigne(e.ligne);
     setInit(true);
   }
 
   return (
     <div>
-      {!init ? (
+      {/** if it's not init then we display the first step of initialisation else we display the second step */
+      !init ? (
         <div className="container">
           {
             <Formik
@@ -59,7 +68,7 @@ export default function Produit() {
                       value={values.ligne}
                     />
                     {errors.ligne && (
-                      <small  className="form-text  text-danger d-flex float-right">
+                      <small className="form-text  text-danger d-flex float-right">
                         {errors.ligne}
                       </small>
                     )}
@@ -104,19 +113,15 @@ export default function Produit() {
                       </small>
                     )}
                   </div>
-                      <button type="submit">valider</button>
+                  <button type="submit">valider</button>
                 </form>
               )}
             </Formik>
           }
         </div>
       ) : (
-        <Init2
-        colonne={colonne}
-        ligne={ligne}
-        colonne2={colonne2}
-        />
-      ) }
+        <Init2 colonne={colonne} ligne={ligne} colonne2={colonne2} />
+      )}
     </div>
   );
 }
