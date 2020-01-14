@@ -1,12 +1,15 @@
 import React from "react";
 import "./App.css";
 import Init1 from "./initialisation1";
+import Header from './header'
 
 function App() {
   return (
-    <div className="App">
-      <h2>Produit Matriciel</h2>
+    <div >
+     <Header/>
+     <div className="App">
       <Init1 />
+      </div>
     </div>
   );
 }

@@ -46,6 +46,7 @@ export default function Produit() {
       {/** if it's not init then we display the first step of initialisation else we display the second step */
       !init ? (
         <div className="container">
+          <h5>Choississez vos paramètres</h5>
           {
             <Formik
               onSubmit={valider}
@@ -113,7 +114,7 @@ export default function Produit() {
                       </small>
                     )}
                   </div>
-                  <button type="submit">valider</button>
+                  <button className="btnValider" type="submit">valider</button>
                 </form>
               )}
             </Formik>

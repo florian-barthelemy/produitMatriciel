@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  
 }
 
 .App-logo {
@@ -10,11 +11,7 @@
   max-width: 1em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
+
 
 .App-header {
   background-color: #282c34;
@@ -38,4 +35,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+header{
+  background-color:#FFA400;
+}
+.img-fluid{
+  max-width:5%;
+}
+body{
+  background-color:#eaf6ff;
+  color:#232528;
+}
+.btnValider{
+  background-color:#FFA400;
+  border:none;
+  border-radius:12px;
 }
