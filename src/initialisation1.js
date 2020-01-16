@@ -121,7 +121,7 @@ export default function Produit() {
           }
         </div>
       ) : (
-        <Init2 colonne={colonne} ligne={ligne} colonne2={colonne2} />
+        <Init2 colonne={colonne} ligne={ligne} colonne2={colonne2}  setInit={setInit} />
       )}
     </div>
   );

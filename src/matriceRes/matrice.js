@@ -21,7 +21,7 @@ export default function Matrice(props) {
   }
   return (
     <div className="col mx-2 table-responsive ">
-      <table className="table">
+      <table className="table table-bordered">
         {/** show the header of the matriceRes */}
         <thead>
           <HeaderMatrice matrice={matriceRes} />

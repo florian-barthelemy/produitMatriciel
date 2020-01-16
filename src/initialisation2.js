@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import Matrice from "./matrice/matrice";
 import MatriceRes from "./matriceRes/matrice";
+import Navigation from './navigation';
+import BoutonRetour from './boutonRetour';
 export default function Initialisation2(props) {
   /** *
    * 
    * init matrice1 ,matrice2 to an empty array
    * iterateur1 and interateur2 takes values of matrice1 and matrice2
    */
+  let [navVal,setNavVal]= useState("matrice1");
   let [matrice1, setMatrice1] = useState([]);
   let [matrice2, setMatrice2] = useState([]);
   let iterateur1 = matrice1.values();
@@ -77,29 +80,39 @@ export default function Initialisation2(props) {
     setMatrice1(matrice1);
     setMatrice2(matrice);
   }
-
   return (
+    <div className="parent">
+    <BoutonRetour setInit={props.setInit}/>
+    <Navigation setNavVal={setNavVal} navVal={navVal}/>
     <div className="row">
-      {/** it calls the three matrix */}
-      <Matrice
+     
+      {console.log(navVal)/** it calls the three matrix */}
+      {navVal==="matrice1" ?(<Matrice
         ligne={props.ligne}
         colonne={props.colonne}
         matrice={matrice1}
         setMatrice={changeMatrice1}
-      />
-      <Matrice
+      />):(<>
+        
+       {/*  */}
+      </>)}
+      {navVal==="matrice2"?(<Matrice
         ligne={props.colonne}
         colonne={props.colonne2}
         matrice={matrice2}
         setMatrice={changeMatrice2}
-      />
-      <MatriceRes
+      />):(<></>)}
+      {navVal==="resultat" ? ( <MatriceRes
         ligne={props.ligne}
         colonne={props.colonne}
         matrice1={matrice1}
         matrice2={matrice2}
         colonne2={props.colonne2}
-      />
+      />):(<></>)}
+     
+      
+      
+    </div>
     </div>
   );
 }

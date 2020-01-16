@@ -37,9 +37,6 @@
   }
 }
 
-header{
-  background-color:#FFA400;
-}
 .img-fluid{
   max-width:5%;
 }
@@ -48,7 +45,27 @@ body{
   color:#232528;
 }
 .btnValider{
-  background-color:#FFA400;
-  border:none;
+ 
   border-radius:12px;
+}
+
+.active,.btnValider,header,.buttonRetour{
+  background-color: #FFA400;
+}
+.notActive{
+  background-color: transparent;
+}
+.btnValider,.active,.notActive,.buttonRetour{
+  border:none;
+  color:#232528;
+
+}
+
+.buttonRetour{
+position: fixed;
+bottom:0;
+left:0;
+}
+.parent{
+  position: relative;
 }
