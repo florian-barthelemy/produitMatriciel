@@ -3,13 +3,6 @@
   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-.input{
-  max-width: 1em;
-}
 
 
 
@@ -20,7 +13,6 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
   color: white;
 }
 
@@ -28,18 +20,15 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+
 
 .img-fluid{
-  max-width:5%;
+  max-width:50px;
 }
+
+
+  
+
 body{
   background-color:#eaf6ff;
   color:#232528;
@@ -49,7 +38,7 @@ body{
   border-radius:12px;
 }
 
-.active,.btnValider,header,.buttonRetour{
+.active,.btnValider,header,.buttonRetour,th{
   background-color: #FFA400;
 }
 .notActive{
@@ -68,4 +57,37 @@ left:0;
 }
 .parent{
   position: relative;
+}
+.input{
+  max-width: 50px;
+  padding: 0;
+}
+input[type="number"]{
+  border:1px solid #232528!important;
+}
+
+input[type="number"]:disabled{
+  background-color: transparent;
+  border:none!important;
+}
+td,th,.table-bordered{
+  border:1px solid #232528!important;
+  margin: auto;
+}
+
+@media  (min-width:325px){
+.img-fluid:hover{
+  margin-top: 15px;
+  margin-bottom: 5px;
+  transform: scale(1.5);
+  }
+}
+@media (max-width:324px){
+  .titre{
+    margin: 0 35px;
+  }
+  .img-fluid:hover{
+    transform: scale(1.5);
+
+  }
 }

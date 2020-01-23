@@ -17,7 +17,7 @@ let matrice=props.matrice;
     props.setMatrice(matrice)
   }
   return (
-    <div className=" mx-2 table-responsive ">
+    <div className=" table-responsive ">
       <table className="table table-bordered">
        {/**
         * it calls the header of the tab

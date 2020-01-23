@@ -62,7 +62,7 @@ export default function Produit() {
                     <input
                       type="number"
                       min="1"
-                      className="form-control"
+                      className="form-control text-center"
                       id="ligne"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -75,14 +75,14 @@ export default function Produit() {
                     )}
                   </div>
 
-                  <div className="form-group">
+                  <div className="form-group ">
                     <label htmlFor="colonne">
                       Nombre de colonnes de la première matrice
                     </label>
                     <input
                       type="number"
                       min="1"
-                      className="form-control"
+                      className="form-control text-center"
                       id="colonne"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -102,7 +102,7 @@ export default function Produit() {
                     <input
                       type="number"
                       min="1"
-                      className="form-control"
+                      className="form-control text-center"
                       id="colonne2"
                       onChange={handleChange}
                       onBlur={handleBlur}

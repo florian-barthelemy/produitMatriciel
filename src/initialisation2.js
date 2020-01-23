@@ -84,17 +84,15 @@ export default function Initialisation2(props) {
     <div className="parent">
     <BoutonRetour setInit={props.setInit}/>
     <Navigation setNavVal={setNavVal} navVal={navVal}/>
-    <div className="row">
+    <div >
      
-      {console.log(navVal)/** it calls the three matrix */}
+      {/** it calls the three matrix by the current choice of navitem*/}
       {navVal==="matrice1" ?(<Matrice
         ligne={props.ligne}
         colonne={props.colonne}
         matrice={matrice1}
         setMatrice={changeMatrice1}
       />):(<>
-        
-       {/*  */}
       </>)}
       {navVal==="matrice2"?(<Matrice
         ligne={props.colonne}

@@ -5,5 +5,5 @@ export default function(props){
     function retour(){
         props.setInit(false);
     }
-    return(<button  onClick={retour} className="buttonRetour"><FontAwesomeIcon icon={faArrowLeft}/></button>)
+    return(<button  onClick={retour} className="buttonRetour"><FontAwesomeIcon icon={faArrowLeft}/> Retour</button>)
 }
